@@ -17,12 +17,18 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-        Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>&copy; 2021-<?= date('Y'); ?> <a href="https://github.com/sprnva/sprnva">Sprnva</a>.</strong> All rights reserved
 </footer>
 </div>
+
+
+<!-- Bootstrap 4 -->
+<script src="<?= public_url('/assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="<?= public_url('/assets/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
+<!-- AdminLTE App -->
+<script src="<?= public_url('/assets/adminlte/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>

@@ -15,8 +15,6 @@ use App\Core\Auth;
 		<?= ucfirst($pageTitle) . " | " . App::get('config')['app']['name'] ?>
 	</title>
 
-	<link rel="stylesheet" href="<?= public_url('/assets/sprnva/css/bootstrap.min.css') ?>">
-
 	<!-- Google Font: Source Sans Pro -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- Font Awesome Icons -->
@@ -24,16 +22,11 @@ use App\Core\Auth;
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/css/adminlte.min.css') ?>">
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/css/highlighter.css') ?>">
-
-	<style>
-	</style>
+	<!-- overlayScrollbars -->
+	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
 
 	<!-- jQuery -->
 	<script src="<?= public_url('/assets/adminlte/plugins/jquery/jquery.min.js') ?>"></script>
-	<!-- Bootstrap 4 -->
-	<script src="<?= public_url('/assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-	<!-- AdminLTE App -->
-	<script src="<?= public_url('/assets/adminlte/js/adminlte.min.js') ?>"></script>
 
 	<?php
 	// this will auto include filepond css/js when adding filepond in public/assets
@@ -48,7 +41,7 @@ use App\Core\Auth;
 </head>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -79,13 +72,17 @@ use App\Core\Auth;
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<span class="dropdown-header">User settings</span>
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item">
+						<a href="<?= route('/profile'); ?>" class="dropdown-item">
 							<i class="fas fa-user mr-2"></i> Profile
 						</a>
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item">
+						<a class="dropdown-item" href="<?= route('/logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 							<i class="fas fa-sign-out-alt mr-2"></i> Logout
 						</a>
+
+						<form id="logout-form" action="<?= route('/logout') ?>" method="POST" style="display:none;">
+							<?= csrf() ?>
+						</form>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -123,39 +120,30 @@ use App\Core\Auth;
 				<!-- Sidebar Menu -->
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-						<!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-						<li class="nav-item menu-open">
-							<a href="#" class="nav-link active">
+						<li class="nav-item">
+							<a href="<?= route('/home') ?>" class="nav-link">
+								<i class="nav-icon fas fa-home"></i>
+								<p>
+									Dashboard
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
-									Starter Pages
+									CRUD OPERATION
 									<i class="right fas fa-angle-left"></i>
 								</p>
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="#" class="nav-link active">
+									<a href="<?= route('/project') ?>" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Active Page</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Inactive Page</p>
+										<p>Projects</p>
 									</a>
 								</li>
 							</ul>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="nav-icon fas fa-th"></i>
-								<p>
-									Simple Link
-									<span class="right badge badge-danger">New</span>
-								</p>
-							</a>
 						</li>
 					</ul>
 				</nav>
@@ -169,19 +157,17 @@ use App\Core\Auth;
 
 			<!-- Content Header (Page header) -->
 			<div class="content-header">
-				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0"><?= ucfirst($pageTitle) ?></h1>
-						</div><!-- /.col -->
-						<div class="col-sm-6">
-							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active">Starter Page</li>
-							</ol>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container-fluid -->
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0"><?= ucfirst($pageTitle) ?></h1>
+					</div><!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Starter Page</li>
+						</ol>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
 			</div>
 			<!-- /.content-header -->
 
