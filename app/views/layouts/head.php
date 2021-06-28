@@ -83,7 +83,7 @@ use App\Core\Auth;
 				<li class="nav-item dropdown">
 					<a class="nav-link" data-toggle="dropdown" href="#">
 						<span class="mr-1"><?= Auth::user('fullname') ?></span>
-						<i class="fas fa-sort-down"></i>
+						<i class="fas fa-chevron-down" style="font-size: 10px;"></i>
 					</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<span class="dropdown-header">User settings</span>
