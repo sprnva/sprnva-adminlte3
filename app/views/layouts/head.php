@@ -15,8 +15,6 @@ use App\Core\Auth;
 		<?= ucfirst($pageTitle) . " | " . App::get('config')['app']['name'] ?>
 	</title>
 
-	<!-- Google Font: Source Sans Pro -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/fontawesome-free/css/all.min.css') ?>">
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') ?>">
@@ -30,7 +28,7 @@ use App\Core\Auth;
 	<style>
 		@font-face {
 			font-family: Nunito;
-			src: url("<?= public_url('/assets/adminlte/fonts/Nunito-light.ttf') ?>");
+			src: url("<?= public_url('/assets/adminlte/fonts/Nunito-Regular.ttf') ?>");
 		}
 
 		body {
