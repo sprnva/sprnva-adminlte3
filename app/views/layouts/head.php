@@ -19,6 +19,8 @@ use App\Core\Auth;
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/fontawesome-free/css/all.min.css') ?>">
+	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') ?>">
+
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/css/adminlte.min.css') ?>">
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/css/highlighter.css') ?>">
@@ -97,7 +99,7 @@ use App\Core\Auth;
 		<!-- Main Sidebar Container -->
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
-			<a href="index3.html" class="brand-link">
+			<a href="index3.html" class="brand-link text-center">
 				<span class="brand-image img-circle elevation-3" style="opacity: .8"></span>
 				<span class="brand-text font-weight-light"><?= App::get('config')['app']['name'] ?></span>
 			</a>
@@ -174,4 +176,3 @@ use App\Core\Auth;
 			<!-- Main content -->
 			<div class="content">
 				<div class="container-fluid">
-					<div class="row">

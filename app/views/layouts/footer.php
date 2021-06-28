@@ -1,7 +1,6 @@
 </div>
 </div>
 </div>
-</div>
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
@@ -27,6 +26,8 @@
 <!-- Bootstrap 4 -->
 <script src="<?= public_url('/assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= public_url('/assets/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
+<script src="<?= public_url('/assets/adminlte/plugins/datatables/jquery.dataTables.js') ?>"></script>
+<script src="<?= public_url('/assets/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= public_url('/assets/adminlte/js/adminlte.min.js') ?>"></script>
 </body>

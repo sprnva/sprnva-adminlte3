@@ -132,10 +132,15 @@ class Router
 	public function group($param, $callback)
 	{
 		$previousGroupPrefix = $this->currentGroupPrefix;
+		$previousGroupMiddleware = $this->currentGroupMiddleware;
+
 		$this->currentGroupPrefix = $previousGroupPrefix . $param['prefix'];
-		$this->currentGroupMiddleware = $param['middleware'];
+		$this->currentGroupMiddleware = (!empty($param['middleware'])) ? $param['middleware'] : [];
+
 		$callback($this);
+
 		$this->currentGroupPrefix = $previousGroupPrefix;
+		$this->currentGroupMiddleware = $previousGroupMiddleware;
 	}
 
 	/**
