@@ -27,6 +27,20 @@ use App\Core\Auth;
 	<!-- overlayScrollbars -->
 	<link rel="stylesheet" href="<?= public_url('/assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
 
+	<style>
+		@font-face {
+			font-family: Nunito;
+			src: url("<?= public_url('/assets/adminlte/fonts/Nunito-light.ttf') ?>");
+		}
+
+		body {
+			font-weight: 300;
+			font-family: Nunito;
+			color: #26425f;
+			background: #eef1f4;
+		}
+	</style>
+
 	<!-- jQuery -->
 	<script src="<?= public_url('/assets/adminlte/plugins/jquery/jquery.min.js') ?>"></script>
 
@@ -134,7 +148,7 @@ use App\Core\Auth;
 							<a href="#" class="nav-link">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
-									CRUD OPERATION
+									CRUD Operation
 									<i class="right fas fa-angle-left"></i>
 								</p>
 							</a>

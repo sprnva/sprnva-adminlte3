@@ -11,7 +11,7 @@ require __DIR__ . '/../layouts/head.php'; ?>
 <div class="pb-3">
 	<div class="col">
 		<?= msg('RESPONSE_MSG'); ?>
-		<div class="card p-3" style="font-size: 14px;">
+		<div class="card p-3" style="color: #6c757d;font-size: 14px;">
 			<!-- Light table -->
 			<div class="table-responsive">
 				<table class="table align-items-center table-striped" id="projectTable">

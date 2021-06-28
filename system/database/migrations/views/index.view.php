@@ -16,8 +16,15 @@ use App\Core\App;
 	<link rel="stylesheet" href="<?= public_url('/assets/sprnva/css/bootstrap.min.css') ?>">
 
 	<style>
+		@font-face {
+			font-family: Nunito;
+			src: url("<?= public_url('/assets/adminlte/fonts/Nunito-light.ttf') ?>");
+		}
+
 		body {
+			font-family: Nunito;
 			background-color: #eef1f4;
+			color: #26425f;
 		}
 	</style>
 
@@ -85,8 +92,8 @@ use App\Core\App;
 		</div>
 
 		<div class="row">
-			<div class="col-md-12" style="text-align: center;">
-				<span>made with coffee && love by J.Guapin</span>
+			<div class="col-md-12 text-center mt-2">
+				<span>&copy; 2021 Sprnva - By Judywen Guapin</span>
 			</div>
 		</div>
 	</div>
