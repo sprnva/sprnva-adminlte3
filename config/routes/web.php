@@ -15,10 +15,10 @@ $router->group(['prefix' => 'file/upload', 'middleware' => ['auth']], function (
 
 $router->group(['prefix' => 'project', 'middleware' => ['auth']], function ($router) {
     $router->get('/', ['ProjectController@index']);
-    $router->get('/detail/{id}', ['ProjectController@detail']);
-    $router->post('/detail/{id}', ['ProjectController@updateDetail']);
-    $router->get('/add', ['ProjectController@add']);
-    $router->post('/add', ['ProjectController@store']);
-    $router->post('/delete/{id}', ['ProjectController@delete']);
-    $router->get('/view/{id}', ['ProjectController@view']);
+    $router->get('/{id}/edit', ['ProjectController@edit']);
+    $router->post('/{project_id}', ['ProjectController@update']);
+    $router->get('/create', ['ProjectController@create']);
+    $router->post('/', ['ProjectController@store']);
+    $router->post('/{id}/delete', ['ProjectController@destroy']);
+    $router->get('/{id}', ['ProjectController@show']);
 });

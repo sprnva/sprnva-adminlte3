@@ -19,7 +19,7 @@ class ProjectController
 		return view('/projects/index', compact('project_datas', 'pageTitle', 'user_id'));
 	}
 
-	public function detail($id)
+	public function edit($id)
 	{
 		$pageTitle = "Project Detail";
 		$user_id = Auth::user('id');
@@ -30,14 +30,14 @@ class ProjectController
 			redirect('/project');
 		}
 
-		return view('/projects/detail', compact('project_details', 'pageTitle'));
+		return view('/projects/edit', compact('project_details', 'pageTitle'));
 	}
 
-	public function add()
+	public function create()
 	{
 		$pageTitle = "Project Add";
 		$projectCode = "PROJ-" . strtoupper(randChar(8));
-		return view('/projects/new', compact('projectCode', 'pageTitle'));
+		return view('/projects/create', compact('projectCode', 'pageTitle'));
 	}
 
 	public function store()
@@ -56,19 +56,19 @@ class ProjectController
 		];
 
 		DB()->insert("projects", $project_form);
-		redirect('/project/add', ["message" => "Added successfully.", "status" => 'success']);
+		redirect('/project/create', ["message" => "Added successfully.", "status" => 'success']);
 	}
 
-	public function delete($id)
+	public function destroy($id)
 	{
 		$user_id = Auth::user('id');
 		DB()->delete('projects', "id = '$id' AND user_id = '$user_id'");
 		redirect('/project', ["message" => "Deleted successfully.", "status" => 'success']);
 	}
 
-	public function updateDetail($id)
+	public function update($project_id)
 	{
-		$request = Request::validate('project/detail/' . $id, [
+		$request = Request::validate('project/detail/' . $project_id, [
 			'edit-proj-code' => 'required',
 			'edit-proj-name' => 'required'
 		]);
@@ -79,11 +79,11 @@ class ProjectController
 			'description' => $request['edit-proj-description']
 		];
 
-		DB()->update("projects", $update_project_form, "id = '$id'");
-		redirect('/project/detail/' . $id, ["message" => "Updated successfully.", "status" => 'success']);
+		DB()->update("projects", $update_project_form, "id = '$project_id'");
+		redirect('/project/' . $project_id . '/edit', ["message" => "Updated successfully.", "status" => 'success']);
 	}
 
-	public function view($id)
+	public function show($id)
 	{
 		$pageTitle = "Project Detail";
 		$user_id = Auth::user('id');
