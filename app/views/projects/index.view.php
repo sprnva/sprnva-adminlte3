@@ -9,7 +9,7 @@ require __DIR__ . '/../layouts/head.php'; ?>
 </div>
 <div class="pb-3">
 	<div class="col">
-		<?= msg('RESPONSE_MSG'); ?>
+		<?= alert_msg(); ?>
 		<div class="card p-3" style="color: #6c757d;font-size: 14px;">
 			<!-- Light table -->
 			<div class="table-responsive">

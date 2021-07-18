@@ -56,14 +56,14 @@ class ProjectController
 		];
 
 		DB()->insert("projects", $project_form);
-		redirect('/project/add', ["Added successfully.", 'success']);
+		redirect('/project/add', ["message" => "Added successfully.", "status" => 'success']);
 	}
 
 	public function delete($id)
 	{
 		$user_id = Auth::user('id');
 		DB()->delete('projects', "id = '$id' AND user_id = '$user_id'");
-		redirect('/project', ["Deleted successfully.", 'success']);
+		redirect('/project', ["message" => "Deleted successfully.", "status" => 'success']);
 	}
 
 	public function updateDetail($id)
@@ -80,7 +80,7 @@ class ProjectController
 		];
 
 		DB()->update("projects", $update_project_form, "id = '$id'");
-		redirect('/project/detail/' . $id, ["Updated successfully.", 'success']);
+		redirect('/project/detail/' . $id, ["message" => "Updated successfully.", "status" => 'success']);
 	}
 
 	public function view($id)

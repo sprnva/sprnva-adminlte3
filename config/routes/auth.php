@@ -6,7 +6,7 @@ $router->post('/logout', ['AuthController@logout']);
 
 $router->group(['prefix' => 'login'], function ($router) {
     $router->get('/', ['AuthController@index']);
-    $router->post('/', ['AuthController@authenticate']);
+    $router->post('/', ['AuthController@store']);
 });
 
 $router->group(['prefix' => 'register'], function ($router) {
@@ -15,10 +15,10 @@ $router->group(['prefix' => 'register'], function ($router) {
 });
 
 $router->group(['prefix' => 'profile', 'middleware' => ['auth']], function ($router) {
-    $router->get("/", ['ProfileController@index', 'auth']);
-    $router->post('/', ['ProfileController@update', 'auth']);
-    $router->post('/changepass', ['ProfileController@changePass', 'auth']);
-    $router->post('/delete', ['ProfileController@delete', 'auth']);
+    $router->get("/", ['ProfileController@index']);
+    $router->post('/{user_id}', ['ProfileController@update']);
+    $router->post('/changepass', ['ProfileController@changePass']);
+    $router->post('/delete/{user_id}', ['ProfileController@destroy']);
 });
 
 $router->group(['prefix' => 'forgot/password'], function ($router) {

@@ -100,15 +100,15 @@ class Request
 		static::storeValidatedToSession($setOldInput);
 
 		if (!empty($errorList)) {
-			redirect($uri, [implode('<br>', $errorList), "danger"]);
+			redirect($uri, ["message" => implode('<br>', $errorList), "status" => "danger"]);
 		}
 
-		if (isset($_REQUEST['_token'])) {
-			static::verifyCsrfToken($_REQUEST['_token']);
+		if (isset($_REQUEST['csrf_token'])) {
+			static::verifyCsrfToken($_REQUEST['csrf_token']);
 		}
 
 		if (!empty($_SERVER['HTTP_X_CSRF_TOKEN'])) {
-			static::verifyCsrfToken($_REQUEST['_token']);
+			static::verifyCsrfToken($_REQUEST['csrf_token']);
 		}
 
 		return $post_data;
@@ -141,7 +141,7 @@ class Request
 	 */
 	public static function token($length)
 	{
-		return md5(randChar($length));
+		return md5(bin2hex(randChar($length)));
 	}
 
 	/**
@@ -153,7 +153,7 @@ class Request
 		$isEmailExist = DB()->select("*", "users", "email = '" . $request['email'] . "'")->get();
 
 		if (!$isEmailExist) {
-			redirect('/forgot/password', ['E-mail not found in the server.', 'danger']);
+			redirect('/forgot/password', ["message" => 'E-mail not found in the server.', "status" => 'danger']);
 		} else {
 
 			$token = Request::token(10);
@@ -201,42 +201,34 @@ class Request
 	 */
 	public static function csrf_token()
 	{
-		if (!isset($_SESSION["_sprnva_csrf_token"])) {
-			$_SESSION["_sprnva_csrf_token"] = md5(bin2hex(randChar(20)));
+		if (!isset($_SESSION["_sprnva_token_"])) {
+			$_SESSION["_sprnva_token_"] = Request::token(10);
 		} else {
-			$token = $_SESSION["_sprnva_csrf_token"];
+			$token = $_SESSION["_sprnva_token_"];
 		}
 
 		return $token;
 	}
 
 	/**
+	 * generates a secret csrf token
+	 * for form submit
+	 * 
+	 */
+	public static function csrf()
+	{
+		return bcrypt(static::csrf_token());
+	}
+
+	/**
 	 * verifies csrf token
+	 * match secret token vs users token
 	 * 
 	 */
 	public static function verifyCsrfToken($request)
 	{
-		if (!static::tokensMatch($request)) {
+		if (!checkHash($_SESSION["_sprnva_token_"], $request)) {
 			throwException('419 | Page expired.');
-		}
-	}
-
-	/**
-	 * match secret token vs users token
-	 * 
-	 */
-	public static function tokensMatch($request)
-	{
-		if (strlen($_SESSION["_sprnva_csrf_token"]) != strlen($request)) {
-			return false;
-		} else {
-			$res = $_SESSION["_sprnva_csrf_token"] ^ $request;
-			$ret = 0;
-			for ($i = strlen($res) - 1; $i >= 0; $i--) {
-				$ret |= ord($res[$i]);
-			}
-
-			return !$ret;
 		}
 	}
 
@@ -246,9 +238,13 @@ class Request
 	 */
 	public static function renewCsrfToken()
 	{
-		$_SESSION["_sprnva_csrf_token"] = md5(bin2hex(randChar(20)));
+		$_SESSION["_sprnva_token_"] = Request::token(10);
 	}
 
+	/**
+	 * unset old datas
+	 * 
+	 */
 	public static function invalidateOld()
 	{
 		if (isset($_SESSION['OLD'])) {
