@@ -4,15 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d751713988987e9331980363e24189ce",
-    "packages": [],
+    "content-hash": "a6fba0d69aa088eebf396fa502690566",
+    "packages": [
+        {
+            "name": "sprnva/framework",
+            "version": "v1.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sprnva/framework.git",
+                "reference": "8a24c3889ed6b301f92288abadeb951ddfa49c5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sprnva/framework/zipball/8a24c3889ed6b301f92288abadeb951ddfa49c5d",
+                "reference": "8a24c3889ed6b301f92288abadeb951ddfa49c5d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Helpers.php",
+                    "src/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Judywen Guapin",
+                    "email": "jguapin21@gmail.com"
+                }
+            ],
+            "description": "The Sprnva Framework.",
+            "keywords": [
+                "framework",
+                "sprnva"
+            ],
+            "support": {
+                "issues": "https://github.com/sprnva/framework/issues",
+                "source": "https://github.com/sprnva/framework/tree/v1.3.6"
+            },
+            "time": "2021-07-20T14:32:58+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
