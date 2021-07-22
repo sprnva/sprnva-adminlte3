@@ -4,20 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6fba0d69aa088eebf396fa502690566",
+    "content-hash": "73aae03800de91316da79101e062a8fa",
     "packages": [
         {
-            "name": "sprnva/framework",
-            "version": "v1.3.6",
+            "name": "sprnva/fortify",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sprnva/framework.git",
-                "reference": "8a24c3889ed6b301f92288abadeb951ddfa49c5d"
+                "url": "https://github.com/sprnva/fortify.git",
+                "reference": "cfd9bd0eb079c51922676cb1596e9cc9342fe1b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sprnva/framework/zipball/8a24c3889ed6b301f92288abadeb951ddfa49c5d",
-                "reference": "8a24c3889ed6b301f92288abadeb951ddfa49c5d",
+                "url": "https://api.github.com/repos/sprnva/fortify/zipball/cfd9bd0eb079c51922676cb1596e9cc9342fe1b5",
+                "reference": "cfd9bd0eb079c51922676cb1596e9cc9342fe1b5",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Judywen Guapin",
+                    "email": "jguapin21@gmail.com"
+                }
+            ],
+            "description": "The Authentication Scaffolding for Sprnva Framework.",
+            "keywords": [
+                "auth",
+                "framework",
+                "sprnva"
+            ],
+            "support": {
+                "issues": "https://github.com/sprnva/fortify/issues",
+                "source": "https://github.com/sprnva/fortify/tree/v1.0.5"
+            },
+            "time": "2021-07-22T03:46:02+00:00"
+        },
+        {
+            "name": "sprnva/framework",
+            "version": "v1.3.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sprnva/framework.git",
+                "reference": "0edf5884f3ccd18acf9175074d9a68ddd64466c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sprnva/framework/zipball/0edf5884f3ccd18acf9175074d9a68ddd64466c7",
+                "reference": "0edf5884f3ccd18acf9175074d9a68ddd64466c7",
                 "shasum": ""
             },
             "type": "library",
@@ -28,6 +65,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Judywen Guapin",
@@ -41,9 +81,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sprnva/framework/issues",
-                "source": "https://github.com/sprnva/framework/tree/v1.3.6"
+                "source": "https://github.com/sprnva/framework/tree/v1.3.14"
             },
-            "time": "2021-07-20T14:32:58+00:00"
+            "time": "2021-07-22T06:37:40+00:00"
         }
     ],
     "packages-dev": [],
