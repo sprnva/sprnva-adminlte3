@@ -2,6 +2,8 @@
 
 use App\Core\App;
 use App\Core\Auth;
+use App\Models\User;
+use App\Core\Route;
 
 // your routes goes here
 $router->get('/', ['WelcomeController@home', 'auth']);
@@ -21,4 +23,15 @@ $router->group(['prefix' => 'project', 'middleware' => ['auth']], function ($rou
     $router->post('/', ['ProjectController@store']);
     $router->post('/{id}/delete', ['ProjectController@destroy']);
     $router->get('/{id}', ['ProjectController@show']);
+});
+
+Route::get('/test', function () {
+    // $test = User::all();
+
+    // foreach (User::all() as $test) {
+    //     echo $test->fullname . "<br>";
+    //     echo $test->username . "<br>";
+    // }
+    var_dump(User::all());
+    die();
 });
