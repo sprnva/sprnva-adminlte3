@@ -1,8 +1,8 @@
-<?php require __DIR__ . '/head.php';
+<?php require __DIR__ . '/../layouts/head.php';
 
-use App\Core\Auth; ?>
-
-<div class="pb-3">
+use App\Core\Auth;
+?>
+<div class="row pb-3">
     <div class="col-12">
         <?= alert_msg(); ?>
     </div>
@@ -107,7 +107,6 @@ use App\Core\Auth; ?>
             </div>
         </div>
     </div>
-
 </div>
 
-<?php require __DIR__ . '/footer.php'; ?>
+<?php require __DIR__ . '/../layouts/footer.php'; ?>

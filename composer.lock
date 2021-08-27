@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "sprnva/fortify",
-            "version": "v1.0.5",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sprnva/fortify.git",
-                "reference": "cfd9bd0eb079c51922676cb1596e9cc9342fe1b5"
+                "reference": "935e967959af113f224208b4265db1478e110af0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sprnva/fortify/zipball/cfd9bd0eb079c51922676cb1596e9cc9342fe1b5",
-                "reference": "cfd9bd0eb079c51922676cb1596e9cc9342fe1b5",
+                "url": "https://api.github.com/repos/sprnva/fortify/zipball/935e967959af113f224208b4265db1478e110af0",
+                "reference": "935e967959af113f224208b4265db1478e110af0",
                 "shasum": ""
             },
             "type": "library",
@@ -39,29 +39,30 @@
             ],
             "support": {
                 "issues": "https://github.com/sprnva/fortify/issues",
-                "source": "https://github.com/sprnva/fortify/tree/v1.0.5"
+                "source": "https://github.com/sprnva/fortify/tree/v1.0.10"
             },
-            "time": "2021-07-22T03:46:02+00:00"
+            "time": "2021-08-23T01:35:37+00:00"
         },
         {
             "name": "sprnva/framework",
-            "version": "v1.3.14",
+            "version": "v1.3.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sprnva/framework.git",
-                "reference": "0edf5884f3ccd18acf9175074d9a68ddd64466c7"
+                "reference": "f0f927a6f7811ad37b6514cf1e1340ae7016ba05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sprnva/framework/zipball/0edf5884f3ccd18acf9175074d9a68ddd64466c7",
-                "reference": "0edf5884f3ccd18acf9175074d9a68ddd64466c7",
+                "url": "https://api.github.com/repos/sprnva/framework/zipball/f0f927a6f7811ad37b6514cf1e1340ae7016ba05",
+                "reference": "f0f927a6f7811ad37b6514cf1e1340ae7016ba05",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "files": [
                     "src/Helpers.php",
-                    "src/bootstrap.php"
+                    "src/bootstrap.php",
+                    "src/Routes.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -81,9 +82,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sprnva/framework/issues",
-                "source": "https://github.com/sprnva/framework/tree/v1.3.14"
+                "source": "https://github.com/sprnva/framework/tree/v1.3.23"
             },
-            "time": "2021-07-22T06:37:40+00:00"
+            "time": "2021-08-23T07:21:24+00:00"
         }
     ],
     "packages-dev": [],
